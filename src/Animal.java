@@ -38,11 +38,17 @@ public abstract class Animal {
 
     }
 
-    @Override
-    public  long calcularCostoConsulta() {
-        // base perro 45000 + (3000*años)
-        // fijo gato 38000
-        // base 28000 (100*peso)
+    public  abstract long calcularCostoConsulta();
+
+    public void imprimirFicha() {
+
+        System.out.println("===== FICHA VETERINARIA =====");
+        System.out.println("Paciente: " + nombrePaciente);
+        System.out.println("Edad: " + edadAnios + " año(s)");
+        System.out.println("Dueño: " + nombreDuenio);
+        System.out.printf("Costo de consulta: $%,d%n", calcularCostoConsulta());
+        System.out.println("=============================\n");
+
     }
 
 }
